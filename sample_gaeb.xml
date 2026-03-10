@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GAEB>
+  <AngebotNr>RE-2026-001</AngebotNr>
+  <Datum>20260310</Datum>
+  <Auftragnehmer>Musterbau GmbH</Auftragnehmer>
+  <Auftraggeber>Stadt Musterstadt</Auftraggeber>
+  <Waehrung>EUR</Waehrung>
+  <Position>
+    <OZ>1</OZ>
+    <Kurztext>Betonfundament</Kurztext>
+    <Menge>2</Menge>
+    <Einheit>H87</Einheit>
+    <EP>1250.00</EP>
+  </Position>
+  <Position>
+    <OZ>2</OZ>
+    <Kurztext>Stahlträger</Kurztext>
+    <Menge>4</Menge>
+    <Einheit>H87</Einheit>
+    <EP>420.50</EP>
+  </Position>
+</GAEB>
