@@ -8,10 +8,22 @@ Ein einfacher Java-Swing-Manager für LDT-Dateien mit folgenden Funktionen:
 - Relevante Regeländerungen automatisch anwenden (z. B. Namens-Normalisierung, PLZ-Bereinigung)
 - LDT-Dateien wieder speichern
 
+## Java-Version
+
+Dieses Projekt ist auf **Java 21** angehoben.
+
+- Empfohlen: `JAVA_HOME` auf ein JDK 21 setzen
+- Optional für Tooling: Datei `.java-version` nutzen
+
+
+### Hinweis zu Mustang
+
+Falls im Praxis-Verwaltungssystem Mustang-Komponenten (z. B. Mustangproject) verwendet werden, diese ebenfalls mit einer Java-21-kompatiblen Version betreiben und lokal mit JDK 21 bauen/starten.
+
 ## Starten
 
 ```bash
-javac -d out src/main/java/de/iptp/ldtmanager/*.java
+javac --release 21 -d out src/main/java/de/iptp/ldtmanager/*.java
 java -cp out de.iptp.ldtmanager.LdtManagerApp
 ```
 
