@@ -22,3 +22,37 @@ java -cp out de.iptp.ldtmanager.LdtManagerApp
 - Feld `7400`: Leere Inhalte werden auf `N/A` gesetzt
 
 Diese Regeln können im Code in `LdtRuleEngine` erweitert werden.
+
+## Häufiger JPA-Fehler (Praxisverwaltung)
+
+Wenn in einem anderen Java-Projekt (z. B. Praxisverwaltung) der Fehler
+`jakarta.persistence.column ist keine wiederholbare Annotationsschnittstelle`
+auftaucht, liegt meistens ein Schreib- oder Importfehler vor.
+
+### Ursache
+
+- Falsche Annotation: `@column` statt `@Column`
+- Falscher Import oder gemischte `javax.persistence`/`jakarta.persistence`-Imports
+
+### Korrektes Beispiel
+
+```java
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Patient {
+    @Id
+    private Long id;
+
+    @Column(name = "nachname")
+    private String nachname;
+}
+```
+
+### Checkliste zur Behebung
+
+1. Annotation überall als `@Column` (großes **C**) schreiben.
+2. Nur `jakarta.persistence.*` **oder** nur `javax.persistence.*` verwenden (nicht mischen).
+3. Doppelte Annotationen auf demselben Feld vermeiden (z. B. zwei `@Column`-Zeilen).
